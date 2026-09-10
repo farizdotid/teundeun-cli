@@ -6,6 +6,11 @@
   "bin": {
     "tdn": "./src/cli.js"
   },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18"
   },
@@ -15,13 +20,21 @@
   },
   "keywords": [
     "cli",
-    "session",
+    "session-manager",
     "ai",
     "claude",
     "opencode",
     "commandcode"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farizdotid/teundeun-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/farizdotid/teundeun-cli/issues"
+  },
+  "homepage": "https://github.com/farizdotid/teundeun-cli",
   "dependencies": {
     "commander": "^12.1.0",
     "cross-spawn": "^7.0.6"
