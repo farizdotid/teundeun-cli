@@ -1,3 +1,5 @@
+<img src="./teundeun-cli-logo.svg" alt="Teundeun CLI" width="600" />
+
 # Teundeun CLI
 
 Save and resume your AI coding sessions.
