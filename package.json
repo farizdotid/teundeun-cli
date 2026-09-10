@@ -1,0 +1,29 @@
+{
+  "name": "teundeun",
+  "version": "0.1.0",
+  "description": "Save and resume your AI coding sessions.",
+  "type": "module",
+  "bin": {
+    "tdn": "./src/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node ./src/cli.js"
+  },
+  "keywords": [
+    "cli",
+    "session",
+    "ai",
+    "claude",
+    "opencode",
+    "commandcode"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "cross-spawn": "^7.0.6"
+  }
+}
