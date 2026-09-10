@@ -1,6 +1,6 @@
 {
   "name": "teundeun",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Save and resume your AI coding sessions.",
   "type": "module",
   "bin": {

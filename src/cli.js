@@ -11,17 +11,22 @@ const program = new Command();
 program
   .name("tdn")
   .description("Save and resume your AI coding sessions.")
-  .version("0.1.0");
+  .version("0.2.0")
+  .enablePositionalOptions();
 
 program
   .command("save")
   .description("Save or update a session")
   .argument("<provider>", "Provider name (e.g. claude, opencode, commandcode)")
-  .requiredOption("--resume <sessionId>", "Session ID to resume")
+  .argument(
+    "<args...>",
+    "Resume flag and session ID exactly as the provider CLI prints them, e.g. -s <id> or --resume <id>",
+  )
   .option("--name <sessionName>", "Memorable name for the session (prompts if omitted)")
-  .action(async (provider, options) => {
+  .passThroughOptions()
+  .action(async (provider, args, options) => {
     try {
-      console.log(await saveSession(provider, options));
+      console.log(await saveSession(provider, args, options));
     } catch (error) {
       console.error(`Error: ${error.message}`);
       process.exitCode = 1;

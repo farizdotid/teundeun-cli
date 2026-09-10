@@ -26,7 +26,7 @@ Save and resume your AI coding sessions.
 Requires Node.js 18 or newer.
 
 ```bash
-npm install -g teundeun
+npm install -g teundeun@latest
 ```
 
 Use without global install:
@@ -42,9 +42,6 @@ npx teundeun list
 ```bash
 tdn save claude --resume 10f02415-921e-4e73-af88-f6d20dc41494
 ```
-
-Teundeun prompts for a session name if you don't pass `--name`. Saving the
-same provider and name updates the stored session ID.
 
 ### List sessions
 
@@ -63,10 +60,6 @@ tdn search remotion
 ```bash
 tdn resume remotion
 ```
-
-The provider process inherits your terminal so you can interact with it
-normally. If the session was saved from a specific directory, Teundeun
-changes into that directory before running the provider command.
 
 ### Delete a session
 

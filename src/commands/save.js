@@ -15,18 +15,25 @@ function prompt(message) {
   });
 }
 
-export async function saveSession(provider, { resume, name }) {
+export async function saveSession(provider, args, { name }) {
+  if (!args || args.length === 0) {
+    throw new Error(
+      "Resume command is required, e.g. --resume <id> or -s <id>.",
+    );
+  }
+
   const sessionName = name || (await prompt("Session name: "));
   if (!sessionName) {
     throw new Error("Session name is required.");
   }
 
-  const raw = `${provider} --resume ${resume}`;
+  const sessionId = args[args.length - 1];
+  const raw = [provider, ...args].join(" ");
 
   const storage = new Storage();
   const result = await storage.save(
     provider,
-    resume,
+    sessionId,
     sessionName,
     process.cwd(),
     raw,
