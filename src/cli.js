@@ -10,7 +10,7 @@ const program = new Command();
 
 program
   .name("tdn")
-  .description("CLI session manager for AI coding tools")
+  .description("Save and resume your AI coding sessions.")
   .version("0.1.0");
 
 program
