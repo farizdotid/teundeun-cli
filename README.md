@@ -1,4 +1,6 @@
-<img src="./teundeun-cli-logo.svg" alt="Teundeun CLI" width="600" />
+<p align="center">
+    <img src="./teundeun-cli-logo.svg" alt="Teundeun CLI" width="600" />
+</p>
 
 # Teundeun CLI
 
