@@ -17,14 +17,19 @@ export async function resumeSession(name, spawnFn = spawn, storage = new Storage
   if (matches.length > 1) {
     const providers = matches.map((session) => session.provider).join(", ");
     throw new Error(
-      `Multiple sessions named "${name}" across providers: ${providers}. ` +
+      `Multiple sessions named "${name}"` +
         `Use a unique name or delete duplicates.`,
     );
   }
 
   const session = matches[0];
 
-  const raw = session.raw || `${session.provider} --resume ${session.sessionId}`;
+  if (!session.raw) {
+    throw new Error(
+      `Session "${name}" has no stored resume command. Save it again with tdn save.`,
+    );
+  }
+  const raw = session.raw;
 
   if (session.path) {
     try {

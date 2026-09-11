@@ -18,7 +18,7 @@ function prompt(message) {
 export async function saveSession(provider, args, { name }) {
   if (!args || args.length === 0) {
     throw new Error(
-      "Resume command is required, e.g. --resume <id> or -s <id>.",
+      "Resume command is required.",
     );
   }
 
@@ -31,6 +31,18 @@ export async function saveSession(provider, args, { name }) {
   const raw = [provider, ...args].join(" ");
 
   const storage = new Storage();
+
+  const matches = await storage.findByName(sessionName);
+  const conflict = matches.find(
+    (session) => session.provider !== provider.toLowerCase(),
+  );
+  if (conflict) {
+    throw new Error(
+      `Session name "${sessionName}" is already used. ` +
+        "Choose a different name or delete the existing session first.",
+    );
+  }
+
   const result = await storage.save(
     provider,
     sessionId,
