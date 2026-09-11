@@ -6,7 +6,7 @@ export async function listSessions() {
   const sessions = await storage.read();
 
   if (sessions.length === 0) {
-    return "No sessions saved yet. Use `tdn save <provider> --resume <id> --name <name>`.";
+    return "No sessions saved yet.";
   }
 
   return formatTable(sessions, { includeProvider: false, includePath: true });
