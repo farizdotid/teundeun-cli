@@ -1,5 +1,7 @@
 <p align="center">
+  <a href="https://www.youtube.com/watch?v=yhiEpjO_3g4">
     <img src="./teundeun-cli-logo-v3.png" alt="Teundeun CLI" width="600" />
+  </a>
 </p>
 
 # Teundeun CLI
